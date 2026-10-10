@@ -1,0 +1,200 @@
+/* Page de vente — Kit complet. N'utilise que les jetons de tokens.css. */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police-texte);
+  font-size: var(--corps);
+  line-height: var(--ligne);
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.conteneur { width: 100%; max-width: var(--largeur-page); margin: 0 auto; padding: 0 var(--e-4); }
+.etroit { max-width: calc(var(--largeur-texte) + 2 * var(--e-4)); }
+
+/* Titres */
+h1, h2 { font-family: var(--police-titre); font-weight: 700; letter-spacing: -0.015em; }
+h1 { font-size: var(--t-h1); line-height: 1.04; }
+h2 { font-size: var(--t-h2); line-height: 1.12; margin-bottom: var(--e-4); }
+h3 { font-size: var(--t-h3); line-height: 1.3; font-weight: 700; }
+p + p { margin-top: var(--e-3); }
+
+.surtitre {
+  font-size: var(--t-petit);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+  margin-bottom: var(--e-2);
+}
+
+/* En-tête */
+.entete {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--nuit-900);
+  color: var(--texte-sur-sombre);
+}
+.entete__ligne { display: flex; align-items: center; justify-content: space-between; min-height: 56px; gap: var(--e-3); }
+.marque { display: inline-flex; align-items: center; gap: var(--e-1); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.marque img { width: 28px; height: 28px; border-radius: 50%; }
+.entete__achat {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 0 var(--e-3);
+  border: 1px solid var(--texte-doux-sur-sombre);
+  border-radius: var(--rayon-petit);
+  font-weight: 600; font-size: var(--t-petit);
+  text-decoration: none; white-space: nowrap;
+}
+.entete__achat:hover { border-color: var(--texte-sur-sombre); }
+
+/* Boutons */
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: var(--bouton-hauteur);
+  padding: 0 var(--e-5);
+  background: var(--action);
+  color: var(--sur-action);
+  border-radius: var(--rayon-petit);
+  font-weight: 700; font-size: 1.0625rem;
+  text-decoration: none; text-align: center;
+  transition: background-color .15s ease;
+}
+.bouton:hover { background: var(--action-survol); }
+@media (min-width: 400px) { .bouton { white-space: nowrap; } }
+.lien-wa {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+/* Prix */
+.prix { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--e-1) var(--e-3); margin-bottom: var(--e-4); }
+.prix__montant {
+  font-family: var(--police-titre);
+  font-size: var(--t-prix);
+  line-height: 1;
+  box-shadow: inset 0 -0.2em 0 var(--or);
+}
+.prix__barre { color: var(--texte-doux-sur-sombre); }
+
+/* 1. Haut de page */
+.hero { background: var(--fond-sombre); color: var(--texte-sur-sombre); padding: var(--e-5) 0 var(--e-6); overflow: hidden; }
+.hero .surtitre { color: var(--or); }
+.hero h1 { max-width: 15ch; }
+.chapo { font-size: var(--t-chapo); color: var(--texte-doux-sur-sombre); margin: var(--e-3) 0 var(--e-4); max-width: 34rem; }
+.actions { display: flex; flex-direction: column; align-items: flex-start; gap: var(--e-1); }
+.rassurance { font-size: var(--t-petit); color: var(--texte-doux-sur-sombre); margin-top: var(--e-3); max-width: 30rem; }
+.hero__visuel { margin-top: var(--e-6); }
+.hero__visuel img { border-radius: var(--rayon-grand); box-shadow: var(--ombre-image); }
+
+/* Sections */
+.bloc { padding: var(--e-7) 0; }
+.bloc--alterne { background: var(--fond-alterne); }
+.appui { margin-top: var(--e-4); padding-left: var(--e-3); border-left: 3px solid var(--trait-fort); }
+
+/* 3. Les trois gestes */
+.gestes { list-style: none; padding: 0; display: grid; gap: var(--e-3); counter-reset: none; }
+.carte {
+  background: var(--surface);
+  border: var(--trait);
+  border-radius: var(--rayon-grand);
+  padding: var(--e-4);
+}
+.carte__num {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: 2.5rem; line-height: 1;
+  color: var(--texte);
+  margin-bottom: var(--e-3);
+}
+.carte h3 { margin-bottom: var(--e-1); }
+.carte p { color: var(--texte-doux); }
+
+/* 4. Le contenu */
+.contenu { display: grid; gap: var(--e-4); }
+.piece { background: var(--surface); border: var(--trait); border-radius: var(--rayon-grand); overflow: hidden; }
+.piece img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: var(--fond-sombre); }
+.piece__texte { padding: var(--e-4); }
+.piece__type { font-size: var(--t-petit); font-weight: 700; color: var(--texte-doux); text-transform: uppercase; letter-spacing: .08em; margin-bottom: var(--e-1); }
+.piece h3 { margin-bottom: var(--e-2); }
+.piece p:last-child { color: var(--texte-doux); }
+.pourquoi { margin-top: var(--e-5); max-width: var(--largeur-texte); }
+.bonus {
+  margin-top: var(--e-4);
+  max-width: var(--largeur-texte);
+  padding: var(--e-3) var(--e-4);
+  border: 1px solid var(--trait-fort);
+  border-radius: var(--rayon-petit);
+}
+
+/* 5. Qui vous parle */
+.auteur { display: grid; gap: var(--e-5); }
+.auteur__photo img { border-radius: var(--rayon-grand); width: 100%; max-height: 520px; object-fit: cover; object-position: 50% 45%; }
+.auteur__photo figcaption { font-size: var(--t-petit); color: var(--texte-doux); margin-top: var(--e-1); }
+.chiffres { list-style: none; padding: 0; margin-top: var(--e-5); display: grid; gap: var(--e-3); }
+.chiffres li { display: flex; align-items: baseline; gap: var(--e-3); padding-top: var(--e-3); border-top: 1px solid var(--trait-fort); }
+.chiffres strong { font-family: var(--police-titre); font-size: 2.25rem; line-height: 1; min-width: 4.5rem; }
+.chiffres span { color: var(--texte-doux); }
+
+/* 6. Pour qui */
+.pourqui { display: grid; gap: var(--e-5); }
+.pourqui h3 { margin-bottom: var(--e-3); }
+.liste { list-style: none; padding: 0; }
+.liste li { position: relative; padding: var(--e-2) 0 var(--e-2) var(--e-5); border-top: var(--trait); }
+.liste li::before { position: absolute; left: 0; top: var(--e-2); font-weight: 700; width: 1.5rem; text-align: center; }
+.liste--oui li::before { content: "✓"; color: var(--succes); }
+.liste--non li::before { content: "✕"; color: var(--texte-doux); }
+
+/* 7. FAQ */
+.faq details { border-top: 1px solid var(--trait-fort); }
+.faq details:last-child { border-bottom: 1px solid var(--trait-fort); }
+.faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: var(--e-3);
+  min-height: 56px; padding: var(--e-2) 0;
+  font-weight: 700; font-size: 1.0625rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--police-titre); font-size: 1.75rem; line-height: 1; flex-shrink: 0; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { padding-bottom: var(--e-4); color: var(--texte-doux); }
+
+/* 8. Dernier appel */
+.final { background: var(--fond-sombre); color: var(--texte-sur-sombre); padding: var(--e-7) 0; text-align: center; }
+.final__contenu { display: flex; flex-direction: column; align-items: center; }
+.final__visuel { border-radius: var(--rayon-grand); margin-bottom: var(--e-5); box-shadow: var(--ombre-image); }
+.final p { color: var(--texte-doux-sur-sombre); margin-bottom: var(--e-4); }
+.prix--centre { justify-content: center; }
+.final .rassurance { margin: var(--e-2) 0 var(--e-2); }
+.bouton--large { width: 100%; max-width: 26rem; }
+
+/* 9. Pied de page */
+.pied { background: var(--nuit-900); color: var(--texte-doux-sur-sombre); padding: var(--e-5) 0; font-size: var(--t-petit); }
+.pied strong { color: var(--texte-sur-sombre); }
+.pied p + p { margin-top: var(--e-1); }
+.pied__petit { opacity: .85; }
+
+/* Ordinateur */
+@media (min-width: 860px) {
+  .hero { padding: var(--e-7) 0 var(--e-8); }
+  .hero__grille { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--e-6); align-items: center; }
+  .hero__visuel { margin-top: 0; }
+  .actions { flex-direction: row; align-items: center; gap: var(--e-4); }
+  .bloc { padding: var(--e-8) 0; }
+  .gestes { grid-template-columns: repeat(3, 1fr); }
+  .contenu { grid-template-columns: 1fr 1fr; }
+  .auteur { grid-template-columns: 0.8fr 1.2fr; gap: var(--e-7); align-items: center; }
+  .pourqui { grid-template-columns: 1fr 1fr; gap: var(--e-6); }
+}
+
+/* Téléphone : cartes plus compactes, photo moins haute */
+@media (max-width: 859px) {
+  .carte { display: grid; grid-template-columns: 3rem 1fr; column-gap: var(--e-2); padding: var(--e-3) var(--e-4); }
+  .carte__num { grid-row: span 2; margin-bottom: 0; }
+  .auteur__photo img { max-height: 380px; }
+}

@@ -1,0 +1,71 @@
+/* Identité — Kit complet (Samuel ABENA)
+   Parti pris : « La leçon d'un ingénieur qui explique simplement : sérieuse comme
+   un livre, directe comme une conversation WhatsApp, sans effet de mode. » */
+:root {
+  /* Accent — le rouge des titres Chariow (#E60000), réservé à l'action d'achat */
+  --accent-500: #E60000;
+  --accent-600: #CC0000;
+  --accent-700: #B80000;
+
+  /* Nuit — le bleu des couvertures du livre et du replay */
+  --nuit-700: #232C66;
+  --nuit-800: #1B2459;
+  --nuit-900: #141A44;
+  --nuit-texte: #C9CDE6;      /* texte doux sur fond nuit (9.3:1) */
+
+  /* Or — le jaune du logo, en touches seulement (jamais en texte sur fond clair) */
+  --or: #FFCC00;
+
+  /* Neutres teintés : papier chaud, encre bleu nuit */
+  --neutre-50: #FAF6EE;       /* papier */
+  --neutre-100: #F3ECDD;
+  --neutre-200: #E4DDCC;
+  --neutre-400: #8A7F66;      /* traits uniquement, pas de texte */
+  --neutre-600: #5A5F7A;      /* texte doux (5.8:1 sur papier) */
+  --neutre-900: #1B2047;      /* encre (14.5:1 sur papier) */
+
+  --succes: #1E7A46;  --attention: #B26A00;  --erreur: #B80000;
+
+  /* Rôles */
+  --fond: var(--neutre-50);
+  --fond-alterne: var(--neutre-100);
+  --surface: #FFFFFF;
+  --texte: var(--neutre-900);
+  --texte-doux: var(--neutre-600);
+  --bordure: var(--neutre-200);
+  --trait-fort: var(--neutre-900);
+  --action: var(--accent-500);
+  --action-survol: var(--accent-700);
+  --sur-action: #FFFFFF;      /* 4.8:1 sur le rouge */
+  --focus: var(--or);
+  --fond-sombre: var(--nuit-800);
+  --texte-sur-sombre: #FFFFFF;
+  --texte-doux-sur-sombre: var(--nuit-texte);
+
+  /* Typographie — Fraunces (titres, voix du livre) + Public Sans (lecture) */
+  --police-titre: "Fraunces", Georgia, "Times New Roman", serif;
+  --police-texte: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --corps: 17px;
+  --ligne: 1.6;
+  --t-petit: 0.875rem;
+  --t-corps: 1rem;
+  --t-chapo: 1.1875rem;
+  --t-h3: 1.25rem;
+  --t-h2: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --t-h1: clamp(2.25rem, 1.5rem + 3.6vw, 4rem);
+  --t-prix: clamp(2.5rem, 2rem + 2.4vw, 3.5rem);
+
+  /* Formes — la séparation se fait AU TRAIT, pas à l'ombre */
+  --rayon-petit: 6px;         /* boutons, étiquettes */
+  --rayon-grand: 18px;        /* cartes, images */
+  --trait: 1px solid var(--bordure);
+  --ombre-image: 0 18px 40px -18px rgba(20, 26, 68, 0.45); /* seulement sous les visuels produit */
+
+  /* Espace — progression, pas une valeur */
+  --pas: 4px;
+  --e-1: 8px;  --e-2: 12px; --e-3: 16px; --e-4: 24px;
+  --e-5: 32px; --e-6: 48px; --e-7: 72px; --e-8: 104px;
+  --largeur-texte: 38rem;
+  --largeur-page: 72rem;
+  --bouton-hauteur: 56px;
+}
